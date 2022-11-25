@@ -8,7 +8,7 @@
 
 provider "kubernetes" {}
 
-resource "kubenetes_namespace_v1" "newnamespace" {
+resource "kubernetes_namespace_v1" "newnamespace" {
   metadata {
     annotations = {
       controlled-by = "flux"
