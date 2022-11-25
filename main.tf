@@ -1,7 +1,15 @@
-provider "aws" {}
+#provider "aws" {}
+#
+#data "aws_caller_identity" "current" {}
+#
+#output "identity" {
+#  value = data.aws_caller_identity.current
+#}
 
-data "aws_caller_identity" "current" {}
+provider "kubernetes" {}
 
-output "identity" {
-  value = data.aws_caller_identity.current
+data "kubernetes_all_namespaces" "allns" {}
+
+output "all-ns" {
+  value = data.kubernetes_all_namespaces.allns
 }
