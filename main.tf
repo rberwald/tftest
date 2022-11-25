@@ -18,7 +18,7 @@ resource "kubernetes_namespace_v1" "newnamespace" {
       mylabel = "label-value"
     }
 
-    name = "flux-created-me"
+    name = "flux-created-me-too"
   }
 }
 
