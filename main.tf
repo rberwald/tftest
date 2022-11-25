@@ -8,6 +8,20 @@
 
 provider "kubernetes" {}
 
+resource "kubenetes_namespace_v1" "newnamespace" {
+  metadata {
+    annotations = {
+      controlled-by = "flux"
+    }
+
+    labels = {
+      mylabel = "label-value"
+    }
+
+    name = "flux-created-me"
+  }
+}
+
 data "kubernetes_all_namespaces" "allns" {}
 
 output "all-ns" {
